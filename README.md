@@ -7,13 +7,13 @@ A React hook for mapping currency codes to their respective symbols and locales.
 To install the package, use npm or yarn:
 
 ```bash
-npm install use-currency-symbol
+npm install currency-code-to-symbol
 ```
 
 or
 
 ```bash
-yarn add use-currency-symbol
+yarn add currency-code-to-symbol
 ```
 
 ## Usage
@@ -24,7 +24,7 @@ Import the useCurrencySymbol hook into your React component and use it to get th
 
 ```javascript
 import React from "react";
-import useCurrencySymbol from "use-currency-symbol";
+import useCurrencySymbol from "currency-code-to-symbol";
 
 const CurrencyDisplay = ({ currencyCode }) => {
   const { symbol, locale } = useCurrencySymbol(currencyCode);
@@ -48,7 +48,7 @@ export default CurrencyDisplay;
 
 ```javascript
 import React, { useState } from "react";
-import useCurrencySymbol from "use-currency-symbol";
+import useCurrencySymbol from "currency-code-to-symbol";
 
 const App = () => {
   const [currencyCode, setCurrencyCode] = useState("USD");
