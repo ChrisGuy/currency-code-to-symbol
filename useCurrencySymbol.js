@@ -122,25 +122,26 @@ const currencySymbols = {
 };
 
 const useCurrencySymbol = (currencyCode) => {
-  const [locale, setLocale] = useState("");
-  const [symbol, setSymbol] = useState("");
-  const [error, setError] = useState("");
+  const [currencyData, setCurrencyData] = useState({
+    symbol: "",
+    locale: "",
+    error: "",
+  });
 
   useEffect(() => {
     if (currencyCode && currencySymbols[currencyCode]) {
-      const { symbol: symbolRes, locale: localRes } =
-        currencySymbols[currencyCode];
-      setSymbol(symbolRes);
-      setLocale(localRes);
-      setError("");
+      const { symbol, locale } = currencySymbols[currencyCode];
+      setCurrencyData({ symbol, locale, error: "" });
     } else {
-      setSymbol("");
-      setLocale("");
-      setError({ message: "No Symbol with that code", input: currencyCode });
+      setCurrencyData({
+        symbol: "",
+        locale: "",
+        error: `No Symbol with the code "${currencyCode}"`,
+      });
     }
   }, [currencyCode]);
 
-  return { symbol, locale, error };
+  return currencyData;
 };
 
 export default useCurrencySymbol;
