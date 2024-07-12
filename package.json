@@ -1,6 +1,6 @@
 {
   "name": "currency-code-to-symbol",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Enter an ISO-4217 currency code and return the symbol",
   "main": "useCurrencySymbol.js",
   "scripts": {
@@ -19,7 +19,7 @@
   "license": "ISC",
   "peerDependencies": {
     "react": "^17.0.0 || ^18.0.0"
-},
+  },
   "bugs": {
     "url": "https://github.com/ChrisGuy/currency-code-to-symbol/issues"
   },
