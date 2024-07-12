@@ -24,24 +24,24 @@ Import the useCurrencySymbol hook into your React component and use it to get th
 
 ```javascript
 import React from "react";
-import useCurrencySymbol from "currency-code-to-symbol";
+import useCurrencySymbol from "./useCurrencySymbol";
 
-const CurrencyDisplay = ({ currencyCode }) => {
-  const { symbol, locale } = useCurrencySymbol(currencyCode);
+const CurrencyInfo = ({ currencyCode }) => {
+  const { symbol, locale, error } = useCurrencySymbol(currencyCode);
+
+  if (error) {
+    return <div>Error: {error}</div>;
+  }
 
   return (
     <div>
-      <p>
-        The symbol for {currencyCode} is {symbol}
-      </p>
-      <p>
-        The locale for {currencyCode} is {locale}
-      </p>
+      <p>Currency Symbol: {symbol}</p>
+      <p>Locale: {locale}</p>
     </div>
   );
 };
 
-export default CurrencyDisplay;
+export default CurrencyInfo;
 ```
 
 ### Another Example
@@ -52,7 +52,7 @@ import useCurrencySymbol from "currency-code-to-symbol";
 
 const App = () => {
   const [currencyCode, setCurrencyCode] = useState("USD");
-  const { symbol, locale } = useCurrencySymbol(currencyCode);
+  const { symbol, locale, error } = useCurrencySymbol(currencyCode);
 
   return (
     <div>
