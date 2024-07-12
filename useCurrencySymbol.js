@@ -136,11 +136,11 @@ const useCurrencySymbol = (currencyCode) => {
     } else {
       setSymbol("");
       setLocale("");
-      setError("No Symbol with that code");
+      setError({ message: "No Symbol with that code", input: currencyCode });
     }
   }, [currencyCode]);
 
-  return { symbol, locale };
+  return { symbol, locale, error };
 };
 
 export default useCurrencySymbol;
