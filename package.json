@@ -1,6 +1,6 @@
 {
   "name": "currency-code-to-symbol",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "Enter an ISO-4217 currency code and return the symbol",
   "main": "useCurrencySymbol.js",
   "scripts": {

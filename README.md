@@ -1,6 +1,6 @@
 # use-currency-symbol
 
-A React hook for mapping currency codes to their respective symbols. This package provides an easy way to display currency symbols in your React applications based on currency codes.
+A React hook for mapping currency codes to their respective symbols and locales. This package provides an easy way to display currency symbols in your React applications based on currency codes.
 
 ## Installation
 
@@ -27,12 +27,15 @@ import React from "react";
 import useCurrencySymbol from "use-currency-symbol";
 
 const CurrencyDisplay = ({ currencyCode }) => {
-  const symbol = useCurrencySymbol(currencyCode);
+  const { symbol, locale } = useCurrencySymbol(currencyCode);
 
   return (
     <div>
       <p>
         The symbol for {currencyCode} is {symbol}
+      </p>
+      <p>
+        The locale for {currencyCode} is {locale}
       </p>
     </div>
   );
@@ -49,7 +52,7 @@ import useCurrencySymbol from "use-currency-symbol";
 
 const App = () => {
   const [currencyCode, setCurrencyCode] = useState("USD");
-  const symbol = useCurrencySymbol(currencyCode);
+  const { symbol, locale } = useCurrencySymbol(currencyCode);
 
   return (
     <div>
@@ -63,6 +66,9 @@ const App = () => {
       <p>
         The symbol for {currencyCode} is {symbol}
       </p>
+      <p>
+        The locale for {currencyCode} is {locale}
+      </p>
     </div>
   );
 };
@@ -74,19 +80,25 @@ export default App;
 
 The use-currency-symbol package supports a wide range of global currencies. Here are some examples:
 
-| Currency Code | Symbol |
-| ------------- | ------ |
-| USD           | $      |
-| EUR           | €      |
-| JPY           | ¥      |
-| GBP           | £      |
-| AUD           | A$     |
-| CAD           | C$     |
-| CHF           | CHF    |
-| CNY           | ¥      |
-| SEK           | kr     |
-| NZD           | NZ$    |
-| ...           | ...    |
+| Currency Code | Symbol | Locale |
+| ------------- | ------ | ------ |
+| USD           | $      | en-US  |
+| EUR           | €      | de-DE  |
+| JPY           | ¥      | ja-JP  |
+| GBP           | £      | en-GB  |
+| AUD           | A$     | en-AU  |
+| CAD           | C$     | en-CA  |
+| CHF           | CHF    | de-CH  |
+| CNY           | ¥      | zh-CN  |
+| SEK           | kr     | sv-SE  |
+| ...           | ...    | ...    |
+
+## Releases
+
+`Version 1.1.0`
+
+- Added Locale Support: Each currency now includes its respective locale, allowing for better internationalization and localization in applications.
+- Updated Documentation: The README now includes detailed information on using the hook with the new locale support.
 
 ## API
 
