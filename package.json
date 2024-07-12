@@ -1,0 +1,27 @@
+{
+  "name": "currency-code-to-symbol",
+  "version": "1.0.0",
+  "description": "Enter an ISO-4217 currency code and return the symbol",
+  "main": "useCurrencySymbol.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ChrisGuy/currency-code-to-symbol.git"
+  },
+  "keywords": [
+    "iso-4217",
+    "currency",
+    "symbol"
+  ],
+  "author": "ChrisGuy",
+  "license": "ISC",
+  "peerDependencies": {
+    "react": "^17.0.0 || ^18.0.0"
+},
+  "bugs": {
+    "url": "https://github.com/ChrisGuy/currency-code-to-symbol/issues"
+  },
+  "homepage": "https://github.com/ChrisGuy/currency-code-to-symbol#readme"
+}
